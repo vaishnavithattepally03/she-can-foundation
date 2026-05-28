@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+
+        <div class="sidebar">
+
+            <h2>
+
+                She Can
+
+            </h2>
+
+            <ul>
+
+                <li onclick="showSection('dashboardSection')">
+
+                    Dashboard
+
+                </li>
+
+                <li onclick="showSection('contactsSection')">
+
+                    Contacts
+
+                </li>
+
+                <li onclick="showSection('messagesSection')">
+
+                    Messages
+
+                </li>
+
+                <li onclick="showSection('imagesSection')">
+
+                    Images
+
+                </li>
+
+                <li onclick="logout()">
+
+                    Logout
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- MAIN CONTENT -->
+
+        <div class="admin-main">
+
+            <!-- DASHBOARD -->
+
+            <div id="dashboardSection">
+
+                <div class="topbar">
+
+                    <h1>
+
+                        Admin Dashboard
+
+                    </h1>
+
+                    <div class="top-buttons">
+
+                        <button onclick="toggleDarkMode()">
+
+                            Dark Mode
+
+                        </button>
+
+                        <button onclick="exportToExcel()">
+
+                            Export Excel
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="stats-container">
+
+                    <div class="stat-box">
+
+                        <h3>Total Contacts</h3>
+
+                        <h2 id="totalContacts">
+
+                            0
+
+                        </h2>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <h3>Total Messages</h3>
+
+                        <h2 id="totalMessages">
+
+                            0
+
+                        </h2>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <h3>Total Images</h3>
+
+                        <h2 id="totalImages">
+
+                            0
+
+                        </h2>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <h3>Total Users</h3>
+
+                        <h2 id="totalUsers">
+
+                            0
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CONTACTS -->
+
+            <div id="contactsSection" style="display:none;">
+
+                <h1 style="margin-bottom:20px;">
+
+                    Contacts
+
+                </h1>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="search-box"
+                    placeholder="Search contacts..."
+                    onkeyup="searchContacts()"
+                >
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Name</th>
+
+                                <th>Email</th>
+
+                                <th>Message</th>
+
+                                <th>Image</th>
+
+                                <th>Date</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="tableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="pagination">
+
+                    <button onclick="prevPage()">
+
+                        Previous
+
+                    </button>
+
+                    <span id="pageNumber">
+
+                        1
+
+                    </span>
+
+                    <button onclick="nextPage()">
+
+                        Next
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- MESSAGES -->
+
+            <div id="messagesSection" style="display:none;">
+
+                <h1 style="margin-bottom:20px;">
+
+                    Messages
+
+                </h1>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Name</th>
+
+                                <th>Message</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="messageTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <!-- IMAGES -->
+
+            <div id="imagesSection" style="display:none;">
+
+                <h1 style="margin-bottom:20px;">
+
+                    Uploaded Images
+
+                </h1>
+
+                <div id="imageGallery"
+                    style="
+                        display:flex;
+                        flex-wrap:wrap;
+                        gap:15px;
+                    "
+                >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- LOADER -->
+
+    <div id="loader">
+
+        Loading...
+
+    </div>
+
+    <!-- TOAST -->
+
+    <div id="toast"></div>
+
+    <!-- TOP BUTTON -->
+
+    <button id="topBtn" onclick="scrollToTop()">
+
+        ↑
+
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

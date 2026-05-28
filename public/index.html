@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>She Can Foundation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- MAIN CONTAINER -->
+
+    <div class="main-container">
+
+        <div class="home-container">
+
+            <!-- LEFT SECTION -->
+
+            <div class="left-section">
+
+                <h1>
+
+                    She Can Foundation
+
+                </h1>
+
+                <h2>
+
+                    Empowering Women Through Technology & Innovation
+
+                </h2>
+
+                <p class="home-text">
+
+                    We help women learn technology, build careers,
+                    gain confidence, and create opportunities for
+                    a brighter future.
+
+                </p>
+
+                <!-- NAVIGATION -->
+
+                <ul class="nav-links">
+
+                    <li>
+
+                        <button onclick="window.location.href='index.html'">
+
+                            Home
+
+                        </button>
+
+                    </li>
+
+                    <li>
+
+                        <button onclick="window.location.href='register.html'">
+
+                            Register
+
+                        </button>
+
+                    </li>
+
+                    <li>
+
+                        <button onclick="window.location.href='login.html'">
+
+                            Login
+
+                        </button>
+
+                    </li>
+
+                    <li>
+
+                        <button onclick="window.location.href='admin.html'">
+
+                            Admin Panel
+
+                        </button>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- RIGHT SECTION -->
+
+            <div class="form-container">
+
+                <h2>
+
+                    Contact Us
+
+                </h2>
+
+                <form id="contactForm">
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter Your Email"
+                        required
+                    >
+
+                    <textarea
+                        id="messageField"
+                        placeholder="Write Your Message"
+                        required
+                    ></textarea>
+
+                    <input
+                        type="file"
+                        id="image"
+                    >
+
+                    <button type="submit">
+
+                        Send Message
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- LOADER -->
+
+    <div id="loader">
+
+        Loading...
+
+    </div>
+
+    <!-- TOAST -->
+
+    <div id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
